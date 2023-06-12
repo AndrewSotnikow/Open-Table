@@ -2,7 +2,7 @@ import Link from "next/link"
 import NavBar from "../components/NavBar/NavBar"
 import Header from "../restaurant/components/Header"
 import RestaurantCard from "../restaurant/components/RestaurantCard"
-import SearchSideBar from "../restaurant/components/SearSideBar"
+import SearchSideBar from "../restaurant/components/SearchSideBar"
 
 const Search = (): JSX.Element => (
   <main className="bg-gray-100 min-h-screen w-screen">

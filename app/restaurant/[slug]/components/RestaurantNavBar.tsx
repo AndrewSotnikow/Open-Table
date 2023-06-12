@@ -1,7 +1,7 @@
 import Link from "next/link"
 import * as React from "react"
 
-const RestaurantBavBar = () => {
+const RestaurantNavBar = () => {
   return (
     <nav className="flex text-reg border-b pb-2">
       <Link href="/restaurant/milestones-grill" className="mr-7">
@@ -14,4 +14,4 @@ const RestaurantBavBar = () => {
   )
 }
 
-export default RestaurantBavBar
+export default RestaurantNavBar
