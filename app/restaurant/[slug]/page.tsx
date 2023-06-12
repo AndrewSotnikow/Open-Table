@@ -4,7 +4,7 @@ import Header from "./components/Header"
 import Images from "./components/Images"
 import Rating from "./components/Rating"
 import ReservationCard from "./components/ReservationCard"
-import RestaurantBavBar from "./components/RestaurantNavBar"
+import RestaurantNavBar from "./components/RestaurantNavBar"
 import Reviews from "./components/Reviews"
 import Title from "./components/Title"
 
@@ -13,10 +13,9 @@ const RestaurantDetails = (): JSX.Element => (
     <main className="max-w-screen-2xl m-auto bg-white">
       <NavBar />
       <Header />
-      {/* DESCRIPTION PORTION */}
       <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
         <div className="bg-white w-[70%] rounded p-3 shadow">
-          <RestaurantBavBar />
+          <RestaurantNavBar />
           <Title title="Milesstone Grill" />
           <Rating />
           <Description />
@@ -27,9 +26,6 @@ const RestaurantDetails = (): JSX.Element => (
           <ReservationCard />
         </div>
       </div>
-      {/* DESCRIPTION PORTION */} {/* RESERVATION CARD PORTION */}{" "}
-      {/* RESERVATION
-  CARD PORTION */}
     </main>
   </main>
 )
