@@ -1,7 +1,12 @@
 import Link from "next/link"
 import * as React from "react"
+import { RestaurantCardType } from "../../page"
 
-const RestaurantCard = (): JSX.Element => {
+interface IRestaurantCard {
+  restaurant: RestaurantCardType
+}
+
+const RestaurantCard = ({ restaurant }: IRestaurantCard): JSX.Element => {
   return (
     <div className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer">
       <Link href={"/restaurant/milestones-grill"}>
