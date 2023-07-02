@@ -14,9 +14,9 @@ const RestaurantCard = ({ restaurant }: IRestaurantCard): JSX.Element => {
       <Link href={`/restaurant/${slug}`}>
         <img src={main_image} alt="" className="w-full h-36" />
         <div className="text-black p-1">
-          <h3 className="font-bold text-2xl mb-2">{name}</h3>
+          <h3 className="font-bold text-xl mb-2">{name}</h3>
           <div className="flex items-start">
-            <div className="flex mb-2">*****</div>
+            <div className="flex">*****</div>
             <p className="ml-2">77 reviews</p>
           </div>
           <p className=" mr-3">{cuisine.name}</p>
