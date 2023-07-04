@@ -64,7 +64,9 @@ const Search = async ({
   searchParams,
 }: {
   searchParams: {
-    city: string
+    city?: string
+    cuisine?: string
+    price?: PRICE
   }
 }) => {
   const restaurants = await fetchRestaurantsByCity(searchParams)
@@ -74,7 +76,11 @@ const Search = async ({
     <>
       <Header />
       <div className="flex py-4 m-auto w-2/3 justify-between items-start">
-        <SearchSideBar locations={locations} cuisines={cuisines} />
+        <SearchSideBar
+          locations={locations}
+          cuisines={cuisines}
+          searchParameters={searchParams}
+        />
         <div className="w-5/6">
           {restaurants.length ? (
             restaurants.map((rest) => (
