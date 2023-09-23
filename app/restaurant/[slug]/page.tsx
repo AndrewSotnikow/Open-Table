@@ -8,6 +8,7 @@ import ReservationCard from "./components/ReservationCard"
 import RestaurantNavBar from "./components/RestaurantNavBar"
 import Reviews from "./components/Reviews"
 import Title from "./components/Title"
+import {notFound} from "next/navigation";
 
 const prisma = new PrismaClient()
 
@@ -36,7 +37,7 @@ const fetchRestaurantBySlug = async (slug: string): Promise<IRestaurant> => {
   })
 
   if (!restaurant) {
-    throw new Error()
+    notFound()
   }
 
   return restaurant
@@ -50,7 +51,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
       <div className="bg-white w-[70%] rounded p-3 shadow">
         <RestaurantNavBar slug={restaurant.slug} />
         <Title name={restaurant.name} />
-        <Rating reviews={restaurant.reviews}/>
+        <Rating review={restaurant.reviews}/>
         <Description description={restaurant.description} />
         <Images images={restaurant.images} />
         <Reviews reviews={restaurant.reviews} />
