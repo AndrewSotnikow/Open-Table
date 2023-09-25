@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 import {AuthModalInputs} from "../AuthModalInputs/AuthModalInputs";
 
 const style = {
@@ -25,6 +25,19 @@ export default function AuthModal({isSignin}: {isSignin: boolean}) {
     const renderContent = (signinContent: string,  signupContent: string) => {
         return  isSignin ? signinContent : signupContent
     }
+
+    const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setInputs({...inputs, [e.target.name]: e.target.value})
+    }
+
+    const [inputs, setInputs] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        city: '',
+        password: ''
+    })
 
     return (
         <div>
@@ -50,7 +63,7 @@ export default function AuthModal({isSignin}: {isSignin: boolean}) {
                         <h2 className='text-2xl font-light text-center'>
                             {renderContent('Log Into Your Account', "Create Your OpenTable Account")}
                         </h2>
-                        <AuthModalInputs />
+                        <AuthModalInputs inputs={inputs} handleChangeInput={handleChangeInput} isSignin={isSignin}/>
                         <button className='uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400'> {renderContent('Log Into Your Account', "Create Your OpenTable Account")}</button>
                     </div>
                 </Box>
