@@ -77,6 +77,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             .setExpirationTime("24h")
             .sign(secret)
 
-        res.status(200).json({})
+       return  res.status(200).json({})
     }
+    return res.status(404).json('Unknown endpoint')
 }
