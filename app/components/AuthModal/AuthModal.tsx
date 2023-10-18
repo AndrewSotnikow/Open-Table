@@ -3,9 +3,10 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState, useContext } from 'react'
 import { AuthModalInputs } from '../AuthModalInputs/AuthModalInputs'
 import { useAuth } from '../../../hooks/useAuth'
+import { AuthenticationContext } from '../../context/AuthContext'
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -19,6 +20,7 @@ const style = {
 }
 
 export default function AuthModal({ isSignin }: { isSignin: boolean }) {
+    const {error} = useContext(AuthenticationContext)
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
